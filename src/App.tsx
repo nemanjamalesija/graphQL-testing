@@ -1,17 +1,22 @@
-import useGetCharacters from './helpers/useGetCharacters';
 import { gql, useQuery } from '@apollo/client';
 import useGetHumans from './helpers/useGetHumans';
+import { useState } from 'react';
 
 function App() {
-  const { loading, error, data } = useGetHumans();
+  const [search, setSearch] = useState('human');
+  const { searchSpecie, loading, error, data } = useGetHumans();
   if (loading) return <h1>Loading...</h1>;
 
-  const {
-    characters: { results },
-  } = data;
-  console.log(results);
+  const handleSearch = () => {
+    searchSpecie(search);
+    console.log(data);
+  };
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <button onClick={handleSearch}>Search humans</button>
+    </div>
+  );
 }
 
 export default App;

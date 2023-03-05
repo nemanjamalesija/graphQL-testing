@@ -1,8 +1,9 @@
-import { useQuery, gql } from '@apollo/client';
+import { useLazyQuery, gql } from '@apollo/client';
+import { useState } from 'react';
 
-const GET_HUMANS = gql`
-  query {
-    characters(filter: { species: "human" }) {
+const GET_SPECIE = gql`
+  query getSpecie($specie: String) {
+    characters(filter: { species: $specie }) {
       results {
         name
       }
@@ -11,9 +12,15 @@ const GET_HUMANS = gql`
 `;
 
 const useGetHumans = () => {
-  const { loading, error, data } = useQuery(GET_HUMANS);
+  const [specie, setSpecie] = useState('');
+  const [getSpecie, { loading, error, data }] = useLazyQuery(GET_SPECIE);
 
-  return { loading, error, data };
+  const searchSpecie = (specie: string) => {
+    setSpecie(specie);
+    getSpecie({ variables: { specie } });
+  };
+
+  return { searchSpecie, loading, error, data };
 };
 
 export default useGetHumans;
