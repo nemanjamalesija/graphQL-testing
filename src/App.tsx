@@ -1,18 +1,7 @@
-import { useQuery, gql } from '@apollo/client';
-
-const GET_CHARACTERS = gql`
-  query {
-    characters {
-      results {
-        name
-        species
-      }
-    }
-  }
-`;
+import useGetCharacters from './helpers/useGetCharacters';
 
 function App() {
-  const { loading, error, data } = useQuery(GET_CHARACTERS);
+  const { loading, error, data } = useGetCharacters();
 
   if (loading) return <h1>Loading...</h1>;
 
