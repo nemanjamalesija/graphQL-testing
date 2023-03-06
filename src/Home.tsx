@@ -1,6 +1,3 @@
-import { gql, useQuery } from '@apollo/client';
-import useGetHumans from './helpers/useGetHumans';
-import { useState } from 'react';
 import useGetCharacters from './helpers/useGetCharacters';
 
 type character = {
@@ -11,7 +8,7 @@ type character = {
 };
 
 function Home() {
-  const { loading, error, data } = useGetCharacters();
+  const { loading, data } = useGetCharacters();
 
   if (loading) return <h1>Loading...</h1>;
 
