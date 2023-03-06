@@ -26,13 +26,13 @@ function Home() {
       {results.map((item: character) => {
         const { id, name, image, species } = item;
         return (
-          <article key={id}>
-            <header className="article__header">
-              <img src={image} className="article__image" />
+          <article key={id} className="article__home">
+            <header className="article__home--header">
+              <img src={image} className="article__home--image" />
             </header>
-            <div className="article__text-box">
-              <p className="article__char--name">{name}</p>
-              <p className="article__char--species">({species})</p>
+            <div className="article__home--text-box">
+              <p className="article__home--char-name">{name}</p>
+              <p className="article__home--char-species">({species})</p>
             </div>
           </article>
         );

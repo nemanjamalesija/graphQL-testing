@@ -7,6 +7,7 @@ const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql/',
   cache: new InMemoryCache(),
 });
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ApolloProvider client={client}>
