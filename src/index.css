@@ -39,4 +39,42 @@ body {
   cursor: pointer;
 }
 
+/* SINGLE CHARACTER */
+.article__single {
+  width: 80rem;
+  margin: 0 auto;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+.article__single--image-header {
+  width: 50rem;
+}
+.article__single--image {
+  width: 100%;
+  padding: 1rem;
+  background-color: #d9480f;
+}
+.article__single--featured-in-container {
+  width: 50rem;
+  font-size: 1.6rem;
+  color: #411604;
+  margin-top: 1rem;
+}
+.article__single--name {
+  text-align: center;
+  font-size: 3.2rem;
+  color: #411604;
+  padding: 1rem;
+  background-color: #d9480f;
+}
+
+.article__episode {
+  display: flex;
+  gap: 1.2rem;
+  border-bottom: 1px solid #411604;
+  padding: 1rem;
+  color: #411604;
+}
+
 /*# sourceMappingURL=index.css.map */

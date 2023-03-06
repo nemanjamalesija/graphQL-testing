@@ -45,3 +45,46 @@ body {
     }
   }
 }
+
+/* SINGLE CHARACTER */
+
+.article__single {
+  width: 80rem;
+  margin: 0 auto;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+
+  &--image-header {
+    width: 50rem;
+  }
+
+  &--image {
+    width: 100%;
+    padding: 1rem;
+    background-color: $--color-accent-primary;
+  }
+
+  &--featured-in-container {
+    width: 50rem;
+    font-size: 1.6rem;
+    color: $--color-text-main;
+    margin-top: 1rem;
+  }
+
+  &--name {
+    text-align: center;
+    font-size: 3.2rem;
+    color: $--color-text-main;
+    padding: 1rem;
+    background-color: $--color-accent-primary;
+  }
+}
+
+.article__episode {
+  display: flex;
+  gap: 1.2rem;
+  border-bottom: 1px solid $--color-text-main;
+  padding: 1rem;
+  color: $--color-text-main;
+}
