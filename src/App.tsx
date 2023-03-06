@@ -3,18 +3,26 @@ import useGetHumans from './helpers/useGetHumans';
 import { useState } from 'react';
 
 function App() {
-  const [search, setSearch] = useState('human');
+  const [searchSpecieValue, setSearchSpecieValue] = useState('');
   const { searchSpecie, loading, error, data } = useGetHumans();
   if (loading) return <h1>Loading...</h1>;
 
   const handleSearch = () => {
-    searchSpecie(search);
-    console.log(data);
+    searchSpecie(searchSpecieValue);
   };
+
+  if (loading) return <h1>Loading...</h1>;
+
+  console.log(data?.characters?.results);
 
   return (
     <div className="App">
-      <button onClick={handleSearch}>Search humans</button>
+      <input
+        type="text"
+        value={searchSpecieValue}
+        onChange={(e) => setSearchSpecieValue(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search species</button>
     </div>
   );
 }
