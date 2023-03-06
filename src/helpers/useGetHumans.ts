@@ -2,7 +2,7 @@ import { useLazyQuery, gql } from '@apollo/client';
 import { useState } from 'react';
 
 const GET_SPECIE = gql`
-  query getSpecie($specie: String) {
+  query getSpecie($specie: String!) {
     characters(filter: { species: $specie }) {
       results {
         name
