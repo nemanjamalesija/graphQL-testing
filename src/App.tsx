@@ -1,15 +1,16 @@
-import { gql, useQuery } from '@apollo/client';
-import useGetHumans from './helpers/useGetHumans';
-import { useState } from 'react';
-import useGetCharacters from './helpers/useGetCharacters';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import SingleCharacter from './SingleCharacter';
 
 function App() {
-  const { loading, error, data } = useGetCharacters();
-
-  if (loading) return <h1>Loading...</h1>;
-  console.log(data);
-
-  return <div className="App"></div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<SingleCharacter />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
